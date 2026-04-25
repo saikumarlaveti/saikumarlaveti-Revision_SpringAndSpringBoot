@@ -1,0 +1,20 @@
+package com;
+
+import java.util.Calendar;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class WishMessageApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(WishMessageApplication.class, args);
+	}
+
+	@Bean(name="cal")
+	public Calendar calendar() {
+		return Calendar.getInstance();
+	}
+}

@@ -1,0 +1,32 @@
+package com.sl;
+
+import java.util.Calendar;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("wishObject")
+public class WishMessageGenerator {
+	
+	@Autowired
+	private Calendar calender;
+	
+	public String GenerateWishMessage(String user) {
+		int hour = calender.get(Calendar.HOUR_OF_DAY);
+		
+		if(hour<12) {
+			return user+"Good Morning";
+		}
+		else if(hour>12 && hour<16) {
+			return user+"Good AferEvening";
+		}
+		
+		else if(hour>16 && hour>18) {
+			return user+"Good Evening";
+		}
+		else {
+			return user+"Good Night";
+		}
+	}
+	
+}

@@ -1,0 +1,25 @@
+package com;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.Student.Student;
+
+@SpringBootApplication
+public class ValueAnnotation02Application {
+
+	public static void main(String[] args) {
+		ApplicationContext con = SpringApplication.run(ValueAnnotation02Application.class, args);
+		
+		Student student = con.getBean("Std",Student.class);
+		System.out.println("Id :" + student.getId());
+		System.out.println("Name :" + student.getName());
+		System.out.println("Gender :" + student.getGender());
+		
+		System.out.println("PhoneNumber : " + student.getNumber()); //hard code
+		
+		System.out.println("Course : " + student.getStdcourse()); //
+	}
+
+}

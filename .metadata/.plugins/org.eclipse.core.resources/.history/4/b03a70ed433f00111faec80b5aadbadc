@@ -1,0 +1,37 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.model.Employee;
+
+@Repository("empDao")
+public class EmployeeDAOIMPL implements EmployeeDAO {
+	
+	private static final String getDetails="select *from Employee where id =?";
+	
+	@Autowired
+	private DataSource ds;
+	
+
+	@Override
+	public List<Employee> getEmpsbyId() throws Exception {
+		// TODO Auto-generated method stub
+		List<Employee> emp = null;
+		
+		try(Connection con = ds.getConnection()){
+			PreparedStatement ps = con.prepareStatement(getDetails){
+				ps.setId
+			}
+		}
+		
+		return null;
+	}
+
+}

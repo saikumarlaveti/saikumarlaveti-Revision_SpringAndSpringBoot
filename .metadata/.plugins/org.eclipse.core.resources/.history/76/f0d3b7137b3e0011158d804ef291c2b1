@@ -1,0 +1,9 @@
+package com.sl;
+
+public class WishMessageGenerator {
+	
+	public Calender calender;
+	
+	
+	
+}

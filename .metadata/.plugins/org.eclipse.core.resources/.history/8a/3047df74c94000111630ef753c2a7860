@@ -1,0 +1,19 @@
+package com.Student;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+
+import lombok.Data;
+
+@Component("Std")
+@Data
+public class Student {
+
+	@Value("${Student.id}")
+	private int id;
+	@Value("${Student.name}")
+	private String name;
+	@Value("${Student.Gender}")
+	private String Gender;
+}

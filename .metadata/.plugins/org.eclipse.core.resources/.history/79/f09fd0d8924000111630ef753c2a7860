@@ -1,0 +1,42 @@
+package com;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.controller.EmployeeController;
+import com.model.Employee;
+
+@SpringBootApplication
+public class MiniProjectLayeredAppApplication {
+
+	public static void main(String[] args) {
+		
+		ConfigurableApplicationContext ctx =
+				SpringApplication.run(MiniProjectLayeredAppApplication.class, args);
+		EmployeeController controller = ctx.getBean("controller", EmployeeController.class);
+		
+		try {
+
+		    List<Employee> listEmps = controller.showempDetails(2);
+
+		    listEmps.forEach(System.out::println);  // Java8 method reference
+
+		}
+
+		catch (SQLException se) {
+		    se.printStackTrace();
+		    System.out.println("Internal DB Problem ");
+		}
+
+		catch (Exception e) {
+		    e.printStackTrace();
+		    System.out.println("Internal unknown Problem ");
+		}
+
+	}
+
+}

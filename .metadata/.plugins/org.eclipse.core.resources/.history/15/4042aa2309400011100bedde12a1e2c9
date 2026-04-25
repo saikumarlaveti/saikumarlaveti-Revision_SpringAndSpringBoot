@@ -1,0 +1,53 @@
+package com;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.model.Employee;
+
+@SpringBootApplication
+public class MiniProjectLayeredAppApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = SpringApplication.run(BootProj03MiniProjectLayeredAppApplication.class, args);
+
+		// get Controller class object
+		PayrollSystemController controller = ctx.getBean("controller", PayrollSystemController.class);
+
+		// gather inputs from enduser
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("enter desg1");
+		String desg1 = sc.next().toUpperCase();
+
+		System.out.println("enter desg2");
+		String desg2 = sc.next().toUpperCase();
+
+		System.out.println("enter desg3");
+		String desg3 = sc.next().toUpperCase();
+
+		// invoke method
+		try {
+
+		    List<Employee> listEmps = controller.showEmpsDetailsByDesgs(id);
+		    listEmps.forEach(System.out::println);  // Java8 method reference
+
+		} // try
+
+		catch (SQLException se) {
+		    se.printStackTrace();
+		    System.out.println("Internal DB Problem ");
+		}
+
+		catch (Exception e) {
+		    e.printStackTrace();
+		    System.out.println("Internal unknown Problem ");
+		}
+	
+	}
+
+}
