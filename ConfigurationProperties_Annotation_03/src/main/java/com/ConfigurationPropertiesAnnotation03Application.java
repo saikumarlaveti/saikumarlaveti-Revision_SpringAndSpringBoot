@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.person.Person;
 import com.student.Employee;
 import com.student.StudentDetails;
 
@@ -15,10 +16,11 @@ public class ConfigurationPropertiesAnnotation03Application {
 		StudentDetails std = con.getBean("stdOBJ", StudentDetails.class);
 		System.out.println("Student INFO " + std);
 		
-		
-//		ApplicationContext con1=  SpringApplication.run(ConfigurationPropertiesAnnotation03Application.class, args);
 		Employee emp = con.getBean("EmployeeObj", Employee.class);
 		System.out.println("Employee INFO " + emp);
+		
+		Person per = con.getBean("per",Person.class);
+		System.out.println("Person INFO " + per);
 	}
 
 }
