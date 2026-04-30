@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-@Component("std")
-//@PropertySource(value="std.info",factory=YamlPropertySourceFactory.class)
-@ConfigurationProperties(prefix = "std.info")
+@Component
+@PropertySource(value="classpath:studentdetails.yml", factory=YamlPropertySourceFactory.class)
+@ConfigurationProperties(prefix="std.info")
 @Data
 public class Student {
 	
@@ -19,6 +19,7 @@ public class Student {
 	private String name;
 	private String gender;
 	private String[] favColors;
-	private List<Integer> books;
-	private Map<Integer,String> familyDetails;
+	private List<String> books;
+	private Map<String,String> familyDetails;
+	
 }

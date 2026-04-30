@@ -1,0 +1,15 @@
+std:
+  info:
+    id: 1
+    name: Saikumar Laveti
+    gender: Male
+    favColors:
+      - Black
+      - Red
+      - Green
+    books:
+      - Focus on what matters
+      - Atomic Habits
+    familyDetails:
+      father: Appala naidu
+      mother: Rajeswari
