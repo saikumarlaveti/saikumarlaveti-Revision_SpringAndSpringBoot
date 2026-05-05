@@ -11,10 +11,13 @@ import com.controller.EmployeeController;
 import com.model.Employee;
 
 @SpringBootApplication
-
 public class MiniProjectLayeredAppApplication {
 
 	public static void main(String[] args) {
+		SpringApplication app = 
+	            new SpringApplication(MiniProjectLayeredAppApplication.class);
+	        
+	        app.setAdditionalProfiles("Test");
 		
 		ConfigurableApplicationContext ctx =
 				SpringApplication.run(MiniProjectLayeredAppApplication.class, args);
@@ -22,9 +25,9 @@ public class MiniProjectLayeredAppApplication {
 		
 		try {
 
-		    List<Employee> listEmps = controller.showempDetails(2);
+		    List<Employee> listEmps = controller.showempDetails(1);
 
-		    listEmps.forEach(System.out::println);  // Java8 method reference
+		    listEmps.forEach(System.out::println);  
 
 		}
 
