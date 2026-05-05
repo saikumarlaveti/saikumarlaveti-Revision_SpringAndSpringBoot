@@ -21,13 +21,6 @@ public class WishMessageApplication {
 		WishMessageGenerator generator = context.getBean("wishObject",WishMessageGenerator.class);
 		String Result = generator.GenerateWishMessage("Saikumar");
 		System.out.println(Result);
-		
-	//	(ConfigurableApplicationContext) ctx).close();
-				
-				
-				
-				
-				
-				
+	
 	}
 }
