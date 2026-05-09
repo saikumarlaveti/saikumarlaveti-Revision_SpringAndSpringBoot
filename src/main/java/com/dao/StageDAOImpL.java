@@ -15,9 +15,9 @@ import com.model.Employee;
 
 
 
-@Repository()
-@Profile("default")
-public class EmployeeDAOImpL implements EmployeeDAO {
+@Repository("StageDAO")
+@Profile("Stage")
+public class StageDAOImpL implements EmployeeDAO {
 
     // SQL Query
     private static final String Emp_Query =

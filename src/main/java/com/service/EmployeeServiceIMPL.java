@@ -10,7 +10,7 @@ import com.model.Employee;
 
 @Service("empservice")
 public class EmployeeServiceIMPL implements EmployeeService{
-	
+
 	@Autowired
 	private EmployeeDAO dao;
 	@Override
@@ -18,5 +18,4 @@ public class EmployeeServiceIMPL implements EmployeeService{
 		List<Employee> employee = dao.getEmpsbyId(id);
 		return employee;
 	}
-
 }

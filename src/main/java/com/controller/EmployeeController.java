@@ -10,17 +10,10 @@ import com.service.EmployeeService;
 
 @Controller("controller")
 public class EmployeeController {
-
 	@Autowired
-	private EmployeeService service;
-	
+	private EmployeeService service;	
 	public List<Employee> showempDetails(int id) throws Exception{
-	
 	List<Employee> listemp = service.fetchEmployeeDetailsbyId(id);
 		return listemp;
 	}
-	
-	
-	
-	
 }
