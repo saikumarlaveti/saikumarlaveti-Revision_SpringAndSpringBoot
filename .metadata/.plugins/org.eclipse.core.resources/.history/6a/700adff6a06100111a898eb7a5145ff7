@@ -1,0 +1,15 @@
+package com.Entity.Runner;
+
+import org.springframework.boot.CommandLineRunner;
+
+public class Runner implements CommandLineRunner {
+
+	Public 
+	@Override
+	public void run(String... args) throws Exception {
+		
+		
+		
+	}
+
+}

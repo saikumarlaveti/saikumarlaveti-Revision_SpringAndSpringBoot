@@ -1,0 +1,46 @@
+package com.Controller;
+
+import java.util.Date;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.Service.WishService;
+
+@Controller
+public class WishController {
+
+	@Autowired
+	public WishService wish;
+	
+	
+	//method -01
+	@RequestMapping("/wish")
+	public ModelAndView wishMessage() {
+		String result = wish.wishMessage("Saikumar Laveti");
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("wMsg",result);
+		mav.addObject("sysDate",new Date());
+		mav.setViewName("wish");
+		return mav;
+	}
+	
+	
+	@RequestMapping("/wish1")
+	public String fetchMessage(HashMap<String,Object> map) {
+		System.out.println("shared memory object " + map.getClass());
+		String result = wish.wishMessage("Saikumar Laveti");
+		map.put("wMsg", result);
+		map.put("sysDate",new Date());
+		System.out.println(map);
+		return "wish";
+		
+	}
+	
+	
+	
+}

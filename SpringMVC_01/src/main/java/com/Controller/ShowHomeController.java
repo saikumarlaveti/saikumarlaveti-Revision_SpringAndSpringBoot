@@ -10,6 +10,6 @@ public class ShowHomeController {
 	public String showHome() {
 		return "greet";
 	}
-	
+
 
 }

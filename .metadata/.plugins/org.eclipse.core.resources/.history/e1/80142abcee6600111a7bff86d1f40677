@@ -1,0 +1,14 @@
+package com.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ShowHomeController {
+	
+	@RequestMapping("/home")
+	public String showHome() {
+		return "http://localhost:4041/home";
+	}
+
+}
