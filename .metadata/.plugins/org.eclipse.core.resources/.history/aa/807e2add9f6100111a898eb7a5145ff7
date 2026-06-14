@@ -1,5 +1,0 @@
-package com.Entity.Repo;
-
-public class PersonRepo extends JpaRepository<Person,Integer> {
-
-}
