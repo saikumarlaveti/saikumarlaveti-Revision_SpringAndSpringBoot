@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+
+<h1>Student Details</h1>
+
+<!-- Array -->
+<h3>Favorite Colors</h3>
+<ul>
+    <li th:each="color : ${favColors}"
+        th:text="${color}">
+    </li>
+</ul>
+
+<!-- List -->
+<h3>Student Names</h3>
+<ul>
+    <li th:each="name : ${StudentNames}"
+        th:text="${name}">
+    </li>
+</ul>
+
+<!-- Set -->
+<h3>Phone Numbers</h3>
+<ul>
+    <li th:each="phone : ${phoneNumber}"
+        th:text="${phone}">
+    </li>
+</ul>
+
+<!-- Map -->
+<h3>ID Details</h3>
+<table border="1">
+    <tr>
+        <th>Document</th>
+        <th>Number</th>
+    </tr>
+
+    <tr th:each="entry : ${Ids}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="org.hibernate.internal.build.AllowReflection"/>
     <fullyQualifiedTypeName name="javax.swing.Spring"/>
     <fullyQualifiedTypeName name="com.Repository.EmployeeRepository"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="com.SpringDataJpaQueryMethods11Application"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
@@ -26,17 +25,23 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="jakarta.persistence.ParameterMode"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
-    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Lob"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
     <fullyQualifiedTypeName name="com.Entity.PersonManagement.PersonManagement"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="com.Service.Student"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="jakarta.annotation.sql.DataSourceDefinition"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
