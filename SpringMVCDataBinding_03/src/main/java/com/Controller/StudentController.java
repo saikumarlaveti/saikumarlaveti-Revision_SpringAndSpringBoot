@@ -25,8 +25,6 @@ public class StudentController {
 	@PostMapping("/register")
 	public String showResult(Map<String,Object> map,@ModelAttribute("stud") Student st) {
 		System.out.println(st);
-		
-		 System.out.println("POST Method Called");
 		return "show_result";
 	}
 	
