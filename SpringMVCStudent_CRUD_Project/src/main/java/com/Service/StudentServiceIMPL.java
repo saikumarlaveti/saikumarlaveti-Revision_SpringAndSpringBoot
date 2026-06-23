@@ -15,9 +15,9 @@ public class StudentServiceIMPL implements StudentService {
 	public StudentRepository student;
 
 	@Override
-	public String saveStudent(Student s) {
-		student.save(s);
-		return "Student successfully registered";
+	public String registerStudent(Student s) {
+		int id = student.save(s).getId();
+		return "Student successfully registered with Id" + id;
 		
 	}
 

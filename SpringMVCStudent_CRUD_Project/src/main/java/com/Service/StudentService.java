@@ -6,7 +6,7 @@ import com.Entity.Student;
 
 public interface StudentService {
 	
-	public String saveStudent(Student s);
+	public String registerStudent(Student s);
 	
 	public List<Student> findAllStudent();
 
