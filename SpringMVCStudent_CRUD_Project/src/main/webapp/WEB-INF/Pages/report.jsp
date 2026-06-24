@@ -23,6 +23,7 @@
                 <th>GENDER</th>
                 <th>AGE</th>
                 <th>COURSE</th>
+                <th>EDIT</th>
             </tr>
 
             <c:forEach var="student" items="${std}">
@@ -30,8 +31,10 @@
                     <td>${student.id}</td>
                     <td>${student.name}</td>
                     <td>${student.gender}</td>
-                    <td>${student.age}</td>
+                    <td>${student.age}</td>s
                     <td>${student.course}</td>
+                    <td><a href="edit?no=${student.id}"><img src=images/edit.png" width="50" height="50"/></a>
+                    <a href="delete?no=${student.id}"><img src=images/delete.png" width="50" height="50"/></a></td>
                 </tr>
             </c:forEach>
 

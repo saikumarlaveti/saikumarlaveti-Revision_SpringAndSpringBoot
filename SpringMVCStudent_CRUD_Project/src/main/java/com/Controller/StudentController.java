@@ -2,12 +2,15 @@ package com.Controller;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Entity.Student;
 import com.Service.StudentService;
@@ -41,6 +44,34 @@ public class StudentController {
 		map.put("std",stdList);
 		return "report";
 	}
+	
+	@GetMapping("/edit")
+	public String getByid(@RequestParam("no")int no,@ModelAttribute("student") Student s) {
+		
+		Student s1 = service.findById(no);
+		BeanUtils.copyProperties(s1, s);
+		return "edit";
+	}
+	
+	@PostMapping("/edit")
+	public String saveAfterEdit(Map<String,Object> map,@ModelAttribute("student") Student std) {
+		String result = service.registerStudent(std);
+		List<Student> list = service.findAllStudent();
+		map.put("resultMsg", result);
+		map.put("student", list);
+		return "report";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteByid(@RequestParam("no")int no,Map<String,Object> map) {
+		
+		String s1 = service.deleteStudent(no);
+		List<Student> list = service.findAllStudent();
+		map.put("resultMsg", s1);
+		map.put("student", list);
+		return "report";
+	}
+	
 	
 	
 }
