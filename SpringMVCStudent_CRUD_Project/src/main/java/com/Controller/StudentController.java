@@ -36,6 +36,12 @@ public class StudentController {
 		List<Student> list = service.findAllStudent();
 		map.put("resultMsg", result);
 		map.put("student", list);
+		return "redirect:report";
+	}
+	@GetMapping("/report")  // http://localhost:5052/getStudentDetails
+	public String getAllStudentReport(Map<String,Object> map){
+		List<Student> stdList = service.findAllStudent();
+		map.put("std",stdList);
 		return "report";
 	}
 	@GetMapping("/getStudentDetails")  // http://localhost:5052/getStudentDetails
