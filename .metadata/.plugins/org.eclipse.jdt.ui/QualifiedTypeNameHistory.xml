@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="com.Repository.StudentRepository"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
-    <fullyQualifiedTypeName name="com.Entity.Student"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
     <fullyQualifiedTypeName name="org.hibernate.internal.build.AllowReflection"/>
     <fullyQualifiedTypeName name="javax.swing.Spring"/>
@@ -15,7 +14,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
     <fullyQualifiedTypeName name="org.hibernate.internal.build.AllowSysOut"/>
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.DynamicInsert"/>
     <fullyQualifiedTypeName name="com.Entity.Employee"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -47,4 +45,7 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
+    <fullyQualifiedTypeName name="com.Entity.Student"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 </qualifiedTypeNameHistroy>

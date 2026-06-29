@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,11 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Entity.Student;
 import com.Service.StudentService;
+import com.validator.StudentValidator;
 
 @Controller
 public class StudentController {
 	@Autowired
 	public StudentService service;
+	@Autowired
+	public StudentValidator validator;
+	
 	@GetMapping("/")  // http://localhost:5052/
 	public String homePage() {
 		return "home";
@@ -30,14 +35,25 @@ public class StudentController {
 		return "register";
 	}
 	
-	@PostMapping("/add")  // http://localhost:5052/add
-	public String addStudent(Map<String,Object>map,@ModelAttribute("student") Student std) {
-		String result = service.registerStudent(std);
-		List<Student> list = service.findAllStudent();
-		map.put("resultMsg", result);
-		map.put("student", list);
-		return "redirect:report";
+	@PostMapping("/add")
+	public String addStudent(Map<String,Object> map,
+	                         @ModelAttribute("student") Student std,
+	                         BindingResult errors) {
+
+	    if (validator.supports(std.getClass())) {
+	        validator.validate(std, errors);
+
+	        if (errors.hasErrors()) {
+	            return "register";
+	        }
+	    }
+
+	    service.registerStudent(std);
+	    return "redirect:report";
 	}
+		
+	
+	
 	@GetMapping("/report")  // http://localhost:5052/getStudentDetails
 	public String getAllStudentReport(Map<String,Object> map){
 		List<Student> stdList = service.findAllStudent();
@@ -60,12 +76,20 @@ public class StudentController {
 	}
 	
 	@PostMapping("/edit")
-	public String saveAfterEdit(Map<String,Object> map,@ModelAttribute("student") Student std) {
-		String result = service.registerStudent(std);
-		List<Student> list = service.findAllStudent();
-		map.put("resultMsg", result);
-		map.put("student", list);
-		return "report";
+	public String saveAfterEdit(Map<String,Object> map,
+	                            @ModelAttribute("student") Student std,
+	                            BindingResult errors) {
+
+	    if (validator.supports(std.getClass())) {
+	        validator.validate(std, errors);
+
+	        if (errors.hasErrors()) {
+	            return "edit";
+	        }
+	    }
+
+	    service.registerStudent(std);
+	    return "redirect:report";
 	}
 	
 	@GetMapping("/delete")
