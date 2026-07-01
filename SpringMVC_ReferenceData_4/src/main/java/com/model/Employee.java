@@ -4,8 +4,17 @@ public class Employee {
 
     private String name;
     private String country;
+    private String state;
 
-    public String getName() {
+    public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getName() {
         return name;
     }
 

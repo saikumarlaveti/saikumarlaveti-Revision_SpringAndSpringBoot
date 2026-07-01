@@ -1,25 +1,24 @@
-<%@ taglib prefix="form"
-uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form"
+           prefix="form"%>
 
-<html>
+<script>
 
-<body>
+function loadStates(){
 
-<h2>Employee Registration</h2>
+    document.forms[0].action="statesurl";
 
-<form:form action="register"
-           method="post"
-           modelAttribute="emp">
+    document.forms[0].submit();
 
-Name :
+}
 
-<form:input path="name"/>
+</script>
 
-<br><br>
+<form:form modelAttribute="emp" method="post">
 
 Country :
 
-<form:select path="country">
+<form:select path="country"
+             onchange="loadStates()">
 
     <form:options items="${countriesInfo}"/>
 
@@ -27,10 +26,12 @@ Country :
 
 <br><br>
 
-<input type="submit" value="Register"/>
+State :
+
+<form:select path="state">
+
+    <form:options items="${statesInfo}"/>
+
+</form:select>
 
 </form:form>
-
-</body>
-
-</html>
