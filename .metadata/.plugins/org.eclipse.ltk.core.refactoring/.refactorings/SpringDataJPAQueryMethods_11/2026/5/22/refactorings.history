@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;com.Entity.Repository&apos; to &apos;com.Repository&apos;&#x0D;&#x0A;- Original project: &apos;SpringDataJPAQueryMethods_11&apos;&#x0D;&#x0A;- Original element: &apos;SpringDataJPAQueryMethods_11/src/main/java/com.Entity.Repository&apos;&#x0D;&#x0A;- Renamed element: &apos;SpringDataJPAQueryMethods_11/src/main/java/com.Repository&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.Entity.Repository&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.Entity.Repository" name="com.Repository" qualified="false" references="true" stamp="1780119614265" textual="false" version="1.0"/>
-</session>
