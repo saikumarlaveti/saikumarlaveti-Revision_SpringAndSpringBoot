@@ -62,4 +62,30 @@ public class StudentServiceIMPL implements StudentService {
 		}
 	}
 
+	@Override
+	public String deleteStudent(Student std) {
+		Optional<Student> opt = service.findById(std.getId());
+		if(opt.isPresent()) {
+			service.delete(std);
+			return "Student deleted";
+		}
+		else {
+		throw new StudentNotFoundException("Student Not Found");
+	}
+	}
+
+	@Override
+	public String studentPhoneNumberUpdate(int id, Long phoneNumber) {
+		Optional<Student> opt = service.findById(id);
+		if(opt.isPresent()) {
+			Student student = opt.get();
+			student.setMoblieNo(phoneNumber);
+			service.save(student);
+			return "Student update successfully";
+		}
+		else {
+		throw new StudentNotFoundException("Student Not Found");
+	}
+	}
+
 }
