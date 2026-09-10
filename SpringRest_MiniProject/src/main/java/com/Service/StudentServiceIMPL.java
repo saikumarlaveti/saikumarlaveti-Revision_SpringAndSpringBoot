@@ -25,10 +25,16 @@ public class StudentServiceIMPL implements StudentService {
 	}
 
 	@Override
-	public Optional<Student> getStudent(int id) {
-		System.out.println("Reached getStudent  Method()");
-		Optional<Student> s = service.findById(id);
-		return s;
+	public Student getStudent(int id) {
+	    System.out.println("Reached getStudent Method()");
+
+	    Optional<Student> s = service.findById(id);
+
+	    if (s.isPresent()) {
+	        return s.get();
+	    }
+
+	    throw new StudentNotFoundException("Student Not Found with ID: " + id);
 	}
 
 	@Override
@@ -39,9 +45,15 @@ public class StudentServiceIMPL implements StudentService {
 	}
 
 	@Override
-	public Optional<Student> getStudentById(int id) {
-		Optional<Student> student= service.findById(id);
-		return student;
+	public Student getStudentById(int id) {
+
+	    Optional<Student> opt = service.findById(id);
+
+	    if (opt.isPresent()) {
+	        return opt.get();
+	    } else {
+	        throw new StudentNotFoundException("Student Not Found with ID: " + id);
+	    }
 	}
 
 	@Override
