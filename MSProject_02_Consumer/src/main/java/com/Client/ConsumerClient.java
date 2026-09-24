@@ -26,5 +26,10 @@ public class ConsumerClient {
 		String responseContent = response.getBody();
 		System.out.println("responeContent " +responseContent);
 		return responseContent;
+		/*
+		URI  http://localhost:9900
+			URL http://localhost:9900/billing/api/info
+			responeContent Final bill Amount = BillAmount(Rs.5000)using instance @Port : 9900
+	*/
 	}
 }
