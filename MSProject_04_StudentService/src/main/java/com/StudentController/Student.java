@@ -1,6 +1,7 @@
 package com.StudentController;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/student")
+@RefreshScope
 public class Student {
 	@Value("${Name}")
 	public String username;
@@ -19,6 +21,6 @@ public class Student {
 	
 	@GetMapping("/show")
 	public ResponseEntity<String> showDetails(){
-		return new ResponseEntity<String> ("/nUser name :" + username + " " + "/nEmail :" + email + "/nPassword :" + dbpassword,HttpStatus.OK);
+		return new ResponseEntity<String> ("nUser name :" + username + " " + "/nEmail :" + email + "/nPassword :" + dbpassword,HttpStatus.OK);
 	}
 }

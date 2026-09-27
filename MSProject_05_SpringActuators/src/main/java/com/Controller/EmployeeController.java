@@ -1,7 +1,6 @@
 package com.Controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,19 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/employee")
-@RefreshScope
-public class EmployeeOperationController {
-
-	@Value("${Name}")
-	public String username;
-	@Value("${PhoneNo}")
-	public String dbpassword;
-	@Value("${Email}")
-	public String email;
-	
+public class EmployeeController {
 	@GetMapping("/show")
 	public ResponseEntity<String> showDetails(){
-		return new ResponseEntity<String> ("/nUser name :" + username + " " + "/nEmail :" + email + "/nPassword :" + dbpassword,HttpStatus.OK);
+		return new ResponseEntity<String> ("This is Spring Actuator :: ",HttpStatus.OK);
 	}
 	
 }
+
