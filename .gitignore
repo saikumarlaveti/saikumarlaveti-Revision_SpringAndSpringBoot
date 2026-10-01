@@ -32,3 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 /.metadata/
+# Application logs
+Logs/
+*.log
+
+# Zipkin executable JAR
+Zipkin Server For logs/ZipKin Server/*.jar
