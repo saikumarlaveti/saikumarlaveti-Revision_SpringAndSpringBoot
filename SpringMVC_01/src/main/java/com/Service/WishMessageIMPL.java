@@ -1,0 +1,32 @@
+package com.Service;
+
+
+import java.time.LocalTime;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class WishMessageIMPL implements WishService {
+
+	
+	@Override
+	public String wishMessage(String name) {
+		
+		LocalTime time = LocalTime.now();
+		int hour = time.getHour();
+		
+		if(hour >= 6 && hour <= 10) {
+			return "Good Morning" + name;
+		}
+		else if(hour >=10 && hour <= 15 ) {
+			return "Good Afternoon " + name;
+		}
+		else if(hour >=15 && hour <=20 ) {
+			return "Good Evening " + name;
+		}
+		else {
+			return "Good Night " + name;
+		}
+	}
+
+}

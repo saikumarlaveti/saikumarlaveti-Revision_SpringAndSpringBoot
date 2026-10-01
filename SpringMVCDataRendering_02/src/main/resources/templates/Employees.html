@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee details</title>
+</head>
+<body>
+<h1>Employee Details</h1>
+
+   <ul>
+    <li th:each="emp : ${Emps}">
+        ID : <span th:text="${emp.id}"></span>
+        Name : <span th:text="${emp.name}"></span>
+        Age : <span th:text="${emp.age}"></span>
+    </li>
+
+</ul>
+</body>
+</html>
