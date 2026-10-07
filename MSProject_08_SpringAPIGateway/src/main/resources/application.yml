@@ -9,27 +9,52 @@ spring:
     gateway:
       server:
         webmvc:
+
           routes:
+
             - id: billing-service
+
               uri: lb://MSProject-07-Billing
+
               predicates:
                 - Path=/fpkt-billing/**
+
               filters:
+                - ErrorFilter
+                - PreFilter
                 - StripPrefix=1
+                - PostFilter
+                - ResponseFilter
+
 
             - id: payment-service
-              uri: lb://MSPROJECT-07-PAYMENT
+
+              uri: lb://MSProject-07-Payment
+
               predicates:
                 - Path=/fpkt-payment/**
+
               filters:
+                - ErrorFilter
+                - PreFilter
                 - StripPrefix=1
+                - PostFilter
+                - ResponseFilter
+
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/		
+      defaultZone: http://localhost:8761/eureka/
+
+
 management:
-  tracing:
-   export:
-    zipkin:
-     enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+
+
+logging:
+  file:
+    name: D:/Spring_Revision/Logs/MSProject_07.log
