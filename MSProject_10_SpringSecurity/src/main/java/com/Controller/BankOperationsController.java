@@ -1,5 +1,6 @@
 package com.Controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,4 +26,5 @@ public class BankOperationsController {
     public String approveLoan() {
         return "Loan approved by the manager";
     }
+   
 }
