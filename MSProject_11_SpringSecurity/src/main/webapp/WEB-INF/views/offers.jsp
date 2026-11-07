@@ -3,20 +3,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Bank Offers</title>
-</head>
+<head><title>Bank Offers</title></head>
 <body>
-
-    <h1>Show Offers Page</h1>
-
-    <p>Home Loan ROI: 7%</p>
-    <p>Four Wheeler Loan ROI: 8%</p>
-    <p>Personal Loan ROI: 12%</p>
-
-    <a href="${pageContext.request.contextPath}/home">
-        Home
-    </a>
-
+    <h1>XYZ Bank Offers</h1>
+    <p>Home Loan: 7%</p>
+    <p>Personal Loan: 12%</p>
+    <a href="${pageContext.request.contextPath}/home">Home</a>
 </body>
 </html>

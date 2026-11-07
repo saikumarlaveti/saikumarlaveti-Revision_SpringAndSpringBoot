@@ -8,23 +8,30 @@
 </head>
 <body>
 
-    <h1>Welcome to XYZ Bank</h1>
+<h1>Welcome to XYZ Bank</h1>
 
-    <p>Your trusted banking partner.</p>
+<a href="${pageContext.request.contextPath}/balance">
+    Check Balance
+</a>
+<br><br>
 
-    <a href="${pageContext.request.contextPath}/balance">
-        Check Balance
-    </a>
-    <br><br>
+<a href="${pageContext.request.contextPath}/offers">
+    Show Offers
+</a>
+<br><br>
 
-    <a href="${pageContext.request.contextPath}/loanApprove">
-        Approve Loan
-    </a>
-    <br><br>
+<a href="${pageContext.request.contextPath}/loanApprove">
+    Approve Loan
+</a>
+<br><br>
 
-    <a href="${pageContext.request.contextPath}/offers">
-        Show Offers
-    </a>
+<form action="${pageContext.request.contextPath}/logout"
+      method="post">
+    <input type="hidden"
+           name="${_csrf.parameterName}"
+           value="${_csrf.token}">
+    <button type="submit">Logout</button>
+</form>
 
 </body>
 </html>

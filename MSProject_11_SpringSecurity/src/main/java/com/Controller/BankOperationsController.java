@@ -1,11 +1,17 @@
-package com.Controller;
 
+package com.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class BankOperationsController {
+
+    // Login page
+    @GetMapping("/login")
+    public String showLogin() {
+        return "login";
+    }
 
     // Home page
     @GetMapping({"/", "/home"})
@@ -37,4 +43,3 @@ public class BankOperationsController {
         return "access_denied";
     }
 }
-
